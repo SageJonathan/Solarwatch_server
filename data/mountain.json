@@ -13,7 +13,8 @@
         "golden_hour": "9:04:44 PM",
         "day_length": "16:29:55",
         "timezone": "America/Edmonton",
-        "utc_offset": -360
+        "utc_offset": -360,
+        "weather": "Sunny with chanches of sudden hail storms"
         },
         "status": "OK"
         },
@@ -31,7 +32,8 @@
             "golden_hour": "8:29:30 PM",
             "day_length": "16:12:43",
             "timezone": "America/Vancouver",
-            "utc_offset": -420
+            "utc_offset": -420,
+            "weather": "Sorry follks, too close to Vancouver...it's gonna be rainy"
             },
             "status": "OK"
             },
@@ -49,7 +51,8 @@
                 "golden_hour": "7:51:02 PM",
                 "day_length": "15:34:28",
                 "timezone": "America/Toronto",
-                "utc_offset": -240
+                "utc_offset": -240,
+                "weather": "Overcast with strong gusts expected at ridgetop"
                 },
                 "status": "OK"
                 }

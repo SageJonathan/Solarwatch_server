@@ -15,7 +15,8 @@ router.get("/", (_req, res) => {
       id: mountain.id,
       sunrise: mountain.results.sunrise,
       sunset: mountain.results.sunset,
-      day_length:mountain.results.day_length
+      day_length:mountain.results.day_length,
+      weather:mountain.results.weather
       
     }));
 
@@ -41,7 +42,8 @@ router.get("/", (_req, res) => {
       const mountainInfo = {
         sunrise: singleMountain.results.sunrise,
         sunset: singleMountain.results.sunset,
-        day_length: singleMountain.results.day_length
+        day_length: singleMountain.results.day_length,
+        weather:singleMountain.results.weather
       };
   
       res.json(mountainInfo);
@@ -50,4 +52,5 @@ router.get("/", (_req, res) => {
       res.status(500).json({ error: "Internal server error" });
     }
   });
+  
 export default router
