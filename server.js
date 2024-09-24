@@ -1,17 +1,23 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import searchRouter from "./routes/solarSearch.js";
+import solarRouter from "./routes/solarSearch.js";
+import coordinateRouter from "./routes/coordinateSearch.js";
 
+// Methods
 const app = express();
 const port = process.env.PORT || 8080;
 
+// Middleware
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 
-app.use("/solarsearch", searchRouter);
+// Routes
+app.use("/solarSearch", solarRouter);
+app.use("/coordinateSearch", coordinateRouter);
 
+// Default 
 app.get("/", (_req, res) => {
   res.send(
     `Welcome to the home page. Please use "/mountain" to access the forecast`
