@@ -1,10 +1,13 @@
 import axios from "axios";
 import express from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = express.Router();
 
-const baseUrl = 'https://api.opencagedata.com/geocode/v1/json';
-const API_KEY=  "22cd36b78dbc4bda868adeb7b10bb112";
+const opencageBaseUrl = process.env.OPENCAGE_BASE_URL;
+const opencageAPIKey = process.env.OPENCAGE_API_KEY;
 
 router.get('/', async (req, res) => {
     const { location } = req.query;
@@ -14,7 +17,7 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`${baseUrl}?q=${encodeURIComponent(location)}&key=${API_KEY}`);
+        const response = await axios.get(`${opencageBaseUrl}?q=${encodeURIComponent(location)}&key=${opencageAPIKey}`);
         const data = response.data;
 
         if (!data || !data.results || data.results.length === 0) {

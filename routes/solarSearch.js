@@ -1,9 +1,12 @@
 import axios from "axios";
 import express from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = express.Router();
 
-const baseUrl = 'https://api.sunrisesunset.io/json';
+const solarBaseURL = process.env.SOLAR_BASE_URL; 
 
 router.get('/', async (req, res) => {
     const { lat, lng } = req.query;
@@ -13,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`${baseUrl}?lat=${lat}&lng=${lng}`);
+        const response = await axios.get(`${solarBaseURL}?lat=${lat}&lng=${lng}`);
         const data = response.data;
 
         if (!data || !data.results) {
