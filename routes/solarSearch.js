@@ -27,6 +27,12 @@ router.get('/', async (req, res) => {
             sunrise: data.results.sunrise,
             sunset: data.results.sunset,
             day_length: data.results.day_length,
+            first_light:data.results.first_light,
+            last_light:data.results.last_light,
+            dawn:data.results.dawn,
+            dusk:data.results.dusk,
+            solar_noon:data.results.solar_noon,
+            golden_hour: data.results.golden_hour,
         };
 
         res.json(mountainInfo);
