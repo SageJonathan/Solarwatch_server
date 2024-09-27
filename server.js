@@ -17,7 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/solarSearch", solarRouter);
 app.use("/coordinateSearch", coordinateRouter);
-app.use("weatherSearch", weatherSearch);
+app.use("/weatherSearch", weatherSearch);
 
 // Default 
 app.get("/", (_req, res) => {
