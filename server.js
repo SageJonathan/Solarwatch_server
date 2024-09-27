@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import solarRouter from "./routes/solarSearch.js";
 import coordinateRouter from "./routes/coordinateSearch.js";
+import weatherSearch from "./routes/weatherSearch.js";
 
 // Methods
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/solarSearch", solarRouter);
 app.use("/coordinateSearch", coordinateRouter);
+app.use("weatherSearch", weatherSearch);
 
 // Default 
 app.get("/", (_req, res) => {
