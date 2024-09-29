@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`${weatherBaseURL}?lat=${lat}&lon=${lng}&appid=${weatherAPIKey}`);
+        const response = await axios.get(`${weatherBaseURL}?lat=${lat}&lon=${lng}&appid=${weatherAPIKey}&units=metric`);
         const data = response.data;
 
         if (!data || !data.weather) {
