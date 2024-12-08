@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
 
         let dayData = [];
 
-        for (let i = 0; i <= 4; i++) {
+        for (let i = 0; i <= 3; i++) {
             const targetDate = new Date(tomorrow);
             targetDate.setDate(tomorrow.getDate() + i); 
             
@@ -58,10 +58,10 @@ router.get("/", async (req, res) => {
 
             dayData.push({
                 day: dayName,
-                averageTemperature: avgTemp.toFixed(2), 
+                averageTemperature: avgTemp.toFixed(0), 
                 weather: weatherCondition,
-                averageVisibility: avgVisibility,
-                averageHumidity: avgHumidity,
+                averageVisibility: avgVisibility.toFixed(0),
+                averageHumidity: avgHumidity.toFixed(0),
             });
         }
 

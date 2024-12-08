@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
 
         const currentWeather = {
             location: data.name || 'Unknown location',
-            temperature: data.main.temp,
-            feels_like: data.main.feels_like,
+            temperature: data.main.temp.toFixed(0),
+            feels_like: data.main.feels_like.toFixed(0),
             weather: data.weather[0].description,
             wind_speed: data.wind.speed,
             humidity: data.main.humidity,
