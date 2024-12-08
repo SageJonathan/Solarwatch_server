@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
 
         let dayData = [];
 
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 0; i <= 4; i++) {
             const targetDate = new Date(tomorrow);
             targetDate.setDate(tomorrow.getDate() + i); 
             
