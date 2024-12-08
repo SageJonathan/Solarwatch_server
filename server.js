@@ -1,10 +1,10 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import solarRouter from "./routes/solarSearch.js";
-import coordinateRouter from "./routes/coordinateSearch.js";
-import weatherSearch from "./routes/weatherSearch.js";
-import forecastSearch from "./routes/forecastSearch.js";
+import solarRouter from "./api/routes/solarSearch.js";
+import coordinateRouter from "./api/routes/coordinateSearch.js";
+import weatherSearch from "./api/routes/weatherSearch.js";
+import forecastSearch from "./api/routes/forecastSearch.js";
 
 // Methods
 const app = express();
