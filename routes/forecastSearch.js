@@ -36,27 +36,25 @@ router.get("/", async (req, res) => {
         tomorrow.setDate(now.getDate() + 1); 
 
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        
+
         let dayData = [];
 
-        // Get the forecast for the next 4 days starting from tomorrow
         for (let i = 1; i <= 4; i++) {
             const targetDate = new Date(tomorrow);
-            targetDate.setDate(tomorrow.getDate() + i); // Target tomorrow + 1, + 2, + 3, + 4
+            targetDate.setDate(tomorrow.getDate() + i); 
             
             const dayName = days[targetDate.getDay()];
 
             const dayForecast = forecastData.filter(forecast => {
-                const forecastDate = new Date(forecast.dt * 1000); // Convert timestamp to Date object
+                const forecastDate = new Date(forecast.dt * 1000); 
                 return forecastDate.getDate() === targetDate.getDate();
             });
 
-            // Calculate averages
             const avgTemp = dayForecast.reduce((acc, forecast) => acc + forecast.main.temp, 0) / dayForecast.length;
             const avgHumidity = dayForecast.reduce((acc, forecast) => acc + forecast.main.humidity, 0) / dayForecast.length;
             const avgVisibility = dayForecast.reduce((acc, forecast) => acc + forecast.visibility, 0) / dayForecast.length;
 
-            const weatherCondition = dayForecast[0].weather[0].main; // Take the weather from the first forecast entry
+            const weatherCondition = dayForecast[0].weather[0].main; 
 
             dayData.push({
                 day: dayName,
