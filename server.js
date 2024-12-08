@@ -4,6 +4,7 @@ import cors from "cors";
 import solarRouter from "./routes/solarSearch.js";
 import coordinateRouter from "./routes/coordinateSearch.js";
 import weatherSearch from "./routes/weatherSearch.js";
+import forecastSearch from "./routes/forecastSearch.js";
 
 // Methods
 const app = express();
@@ -18,12 +19,13 @@ app.use(express.json());
 app.use("/solarSearch", solarRouter);
 app.use("/coordinateSearch", coordinateRouter);
 app.use("/weatherSearch", weatherSearch);
+app.use("/forecastSearch", forecastSearch);
 
 // Default 
 app.get("/", (_req, res) => {
-  res.send(
-    `Welcome to the home page. Please use "/mountain" to access the forecast`
-  );
+  // res.send(
+  //   `Welcome to the home page. Please use "/mountain" to access the forecast`
+  // );
 });
 
 app.listen(port, () => {
