@@ -23,9 +23,9 @@ app.use("/forecastSearch", forecastSearch);
 
 // Default 
 app.get("/", (_req, res) => {
-  // res.send(
-  //   `Welcome to the home page. Please use "/mountain" to access the forecast`
-  // );
+  res.send(
+    `Welcome to the home page. Please use "/mountain" to access the forecast`
+  );
 });
 
 app.listen(port, () => {
