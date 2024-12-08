@@ -24,7 +24,11 @@ app.use("/forecastSearch", forecastSearch);
 // Default 
 app.get("/", (_req, res) => {
   res.send(
-    `Welcome to the home page. Please use "/mountain" to access the forecast`
+    `Welcome to the Solar Watch API. Available routes: 
+    - /solarSearch: Get solar-related data
+    - /coordinateSearch: Process location-based coordinates
+    - /weatherSearch: Get current weather data
+    - /forecastSearch: Get a 4-day weather forecast`
   );
 });
 
