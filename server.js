@@ -13,7 +13,10 @@ const port = process.env.PORT || 8080;
 // Middleware
 // app.use(cors());
 app.use(cors({
-  origin: 'https://solarwatch-server.vercel.app', 
+  origin: [
+    'https://solarwatch-server.vercel.app',
+    `http://localhost:${port}`, 
+  ]
 }));
 app.use(express.static("public"));
 app.use(express.json());
