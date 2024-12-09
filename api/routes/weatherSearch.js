@@ -25,17 +25,18 @@ router.get('/', async (req, res) => {
         }
 
         const currentWeather = {
-            location: data.name || 'Unknown location',
-            temperature: data.main.temp.toFixed(0),
-            feels_like: data.main.feels_like.toFixed(0),
-            weather: data.weather[0].description,
-            wind_speed: data.wind.speed,
-            humidity: data.main.humidity,
-            visibility: data.visibility,
-            pressure: data.main.pressure,
-            cloudiness: data.clouds.all,
-            rain: data.rain ? data.rain['1h'] : null, // Optional, as rain may not always be present
-        };
+            location: data.name || "Unknown location",
+            temperature: isNaN(data.main.temp) ? 0 : data.main.temp.toFixed(0),
+            feels_like: isNaN(data.main.feels_like) ? 0 : data.main.feels_like.toFixed(0),
+            weather: data.weather?.[0]?.description || "Unknown",
+            wind_speed: isNaN(data.wind.speed) ? 0 : data.wind.speed,
+            humidity: isNaN(data.main.humidity) ? 0 : data.main.humidity,
+            visibility: isNaN(data.visibility) ? 0 : data.visibility,
+            pressure: isNaN(data.main.pressure) ? 0 : data.main.pressure,
+            cloudiness: isNaN(data.clouds.all) ? 0 : data.clouds.all,
+            rain: data.rain && data.rain["1h"] ? data.rain["1h"] : 0, 
+          };
+          
 
         res.json(currentWeather);
     } catch (error) {
