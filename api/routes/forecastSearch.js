@@ -57,11 +57,11 @@ router.get("/", async (req, res) => {
             const weatherCondition = dayForecast[0].weather[0].main; 
 
             dayData.push({
-                day: dayName,
-                averageTemperature: avgTemp.toFixed(0), 
-                weather: weatherCondition,
-                averageVisibility: avgVisibility.toFixed(0),
-                averageHumidity: avgHumidity.toFixed(0),
+              day: dayName,
+              averageTemperature: isNaN(avgTemp) ? 0 : avgTemp.toFixed(0),
+              weather: weatherCondition || "Unknown",
+              averageVisibility: isNaN(avgVisibility) ? 0 : avgVisibility.toFixed(0),
+              averageHumidity: isNaN(avgHumidity) ? 0 : avgHumidity.toFixed(0),
             });
         }
 
