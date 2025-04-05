@@ -28,7 +28,9 @@ app.get("/", (_req, res) => {
     - /solarSearch: Get solar-related data
     - /coordinateSearch: Process location-based coordinates
     - /weatherSearch: Get current weather data
-    - /forecastSearch: Get a 4-day weather forecast`
+    - /forecastSearch: Get a 4-day weather forecast
+    __Consider donating to suport the service!__`
+    
   );
 });
 
